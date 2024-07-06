@@ -1,0 +1,154 @@
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* Navbar styles */
+#navbar {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+#navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#navbar li {
+    display: inline;
+    margin: 0 10px;
+}
+
+#navbar a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Splash screen */
+#splash-screen {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #222;
+    color: #fff;
+}
+
+#splash-screen h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+#splash-screen p {
+    font-size: 1.2em;
+}
+
+/* Section styles */
+section {
+    padding: 20px;
+    margin: 20px 0;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+/* Image carousel */
+#image-carousel {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#image-carousel img {
+    width: 100%;
+    height: auto;
+    display: none;
+    animation: fade 1s ease-in-out;
+}
+
+#image-carousel img.active {
+    display: block;
+}
+
+/* Animations */
+@keyframes fade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Form styles */
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+form input, form textarea, form button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+form button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #555;
+}
+
+/* Footer styles */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+#social-media {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+#social-media a {
+    display: inline-block;
+}
+
+#social-media img {
+    width: 30px;
+    height: 30px;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    #navbar ul {
+        display: block;
+    }
+
+    #navbar li {
+        display: block;
+        margin: 10px 0;
+    }
+}

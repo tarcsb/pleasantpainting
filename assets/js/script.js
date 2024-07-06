@@ -1,3 +1,5 @@
+// pleasant-painting/assets/js/script.js
+
 document.addEventListener('DOMContentLoaded', function() {
     const log = console.log;
     log('Document loaded');
@@ -17,15 +19,15 @@ document.addEventListener('DOMContentLoaded', function() {
     let contactForm = document.getElementById('contact-form');
     contactForm.addEventListener('submit', function(event) {
         event.preventDefault();
-        alert('Contact form submitted');
-        log('Contact form submitted');
+        alert('Contact form submitted. You will be redirected to the home page.');
+        window.location.href = '/';
     });
 
     let referralForm = document.getElementById('referral-form');
     referralForm.addEventListener('submit', function(event) {
         event.preventDefault();
-        alert('Referral form submitted');
-        log('Referral form submitted');
+        alert('Referral form submitted. You will be redirected to the home page.');
+        window.location.href = '/';
     });
     
     const colors = ['#5D6D7E', '#85929E', '#A9CCE3', '#D4E6F1'];

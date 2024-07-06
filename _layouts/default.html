@@ -1,13 +1,15 @@
+<!-- pleasant-painting/_layouts/default.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ site.title }}</title>
+    <title>{{ page.title }} - {{ site.title }}</title>
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 </head>
 <body>
     {% include header.html %}
+    {% include navbar.html %}
     {{ content }}
     {% include footer.html %}
     <script src="{{ '/assets/js/script.js' | relative_url }}"></script>

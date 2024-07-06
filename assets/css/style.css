@@ -1,18 +1,22 @@
+/* General styles */
 body {
     font-family: 'Helvetica Neue', Arial, sans-serif;
-    background-color: #f5f5f5;
+    background-color: #f0f8ff; /* Light blue beach background */
     color: #333;
     margin: 0;
     padding: 0;
     line-height: 1.6;
+    transition: background-color 0.5s ease; /* Smooth background color transition */
 }
 
 /* Navbar styles */
 #navbar {
-    background-color: #333;
-    color: #fff;
+    background-color: rgba(255, 255, 255, 0.8); /* Translucent background */
+    color: #333;
     padding: 10px 20px;
     text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    backdrop-filter: blur(10px); /* Blur effect for modern look */
 }
 
 #navbar ul {
@@ -27,17 +31,23 @@ body {
 }
 
 #navbar a {
-    color: #fff;
+    color: #333;
     text-decoration: none;
     font-weight: bold;
+    transition: color 0.3s; /* Smooth color transition */
+}
+
+#navbar a:hover {
+    color: #007BFF; /* Beach color */
 }
 
 /* Splash screen */
 #splash-screen {
     text-align: center;
     padding: 50px 20px;
-    background-color: #222;
-    color: #fff;
+    background: linear-gradient(to right, #ffecd2, #fcb69f); /* Light beach gradient */
+    color: #333;
+    animation: fadeIn 2s ease-in-out; /* Fade-in animation */
 }
 
 #splash-screen h1 {
@@ -53,6 +63,10 @@ body {
 section {
     padding: 20px;
     margin: 20px 0;
+    background-color: rgba(255, 255, 255, 0.9); /* Translucent background */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    animation: fadeInUp 1s ease-in-out; /* Fade-in up animation */
 }
 
 h2 {
@@ -61,31 +75,26 @@ h2 {
     margin-bottom: 20px;
 }
 
-/* Image carousel */
+/* Carousel styles */
 #image-carousel {
     position: relative;
     max-width: 1000px;
     margin: 0 auto;
     overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
 #image-carousel img {
     width: 100%;
     height: auto;
     display: none;
-    animation: fade 1s ease-in-out;
+    transition: opacity 1s ease-in-out; /* Smooth opacity transition */
 }
 
 #image-carousel img.active {
     display: block;
-}
-
-/* Animations */
-@keyframes fade {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    opacity: 1;
 }
 
 /* Form styles */
@@ -94,9 +103,10 @@ form {
     margin: 0 auto;
     padding: 20px;
     border: 1px solid #ddd;
-    border-radius: 10px;
-    background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px; /* Rounded corners */
+    background-color: rgba(255, 255, 255, 0.9); /* Translucent background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    animation: fadeInUp 1s ease-in-out; /* Fade-in up animation */
 }
 
 form input, form textarea, form button {
@@ -104,32 +114,37 @@ form input, form textarea, form button {
     padding: 10px;
     margin: 10px 0;
     border: 1px solid #ddd;
-    border-radius: 5px;
+    border-radius: 5px; /* Rounded corners */
 }
 
 form button {
-    background-color: #333;
+    background-color: #007BFF; /* Beach color */
     color: #fff;
     border: none;
     cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transition for background and transform */
 }
 
 form button:hover {
-    background-color: #555;
+    background-color: #0056b3;
+    transform: scale(1.05); /* Slightly enlarge on hover */
 }
 
 /* Footer styles */
 footer {
-    background-color: #333;
-    color: #fff;
+    background-color: rgba(255, 255, 255, 0.8); /* Translucent background */
+    color: #333;
     padding: 20px 0;
     text-align: center;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    backdrop-filter: blur(10px); /* Blur effect for modern look */
 }
 
 #social-media {
     display: flex;
     gap: 10px;
     justify-content: center;
+    animation: fadeIn 2s ease-in-out; /* Fade-in animation */
 }
 
 #social-media a {
@@ -139,6 +154,32 @@ footer {
 #social-media img {
     width: 30px;
     height: 30px;
+    transition: transform 0.3s; /* Smooth transform transition */
+}
+
+#social-media img:hover {
+    transform: scale(1.2); /* Slightly enlarge on hover */
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Responsive styles */

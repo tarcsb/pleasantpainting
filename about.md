@@ -2,6 +2,7 @@
 ---
 layout: default
 title: About Us
+permalink: /about.html
 ---
 
 <section id="about">

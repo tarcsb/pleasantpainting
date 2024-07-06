@@ -1,0 +1,1209 @@
+Directory Tree Structure:
+  assets
+    assets/js
+      assets/js/script.js
+    assets/css
+      assets/css/style.css
+    assets/images
+      assets/images/7.jpg
+      assets/images/5.jpg
+      assets/images/15.jpg
+      assets/images/14.png
+      assets/images/8.jpg
+      assets/images/10.jpg
+      assets/images/4.jpg
+      assets/images/1.jpg
+      assets/images/9.jpg
+      assets/images/12.jpg
+      assets/images/13.jpg
+      assets/images/11.jpg
+      assets/images/social-media-icons
+        assets/images/social-media-icons/snapchat.png
+        assets/images/social-media-icons/whatsapp.png
+        assets/images/social-media-icons/twitter.png
+        assets/images/social-media-icons/linkedin.png
+        assets/images/social-media-icons/tumblr.png
+        assets/images/social-media-icons/pinterest.png
+        assets/images/social-media-icons/facebook.png
+        assets/images/social-media-icons/instagram.png
+        assets/images/social-media-icons/reddit.png
+        assets/images/social-media-icons/youtube.png
+      assets/images/2.jpg
+  Gemfile
+  contact.md
+  index.md
+  Gemfile.lock
+  _config.yml
+  get_social_icons_v2.sh
+  README.md
+  referral.md
+  .jekyll-cache
+    .jekyll-cache/Jekyll
+      .jekyll-cache/Jekyll/Cache
+        .jekyll-cache/Jekyll/Cache/Jekyll--Cache
+  about.md
+  mine.sh
+  _layouts
+    _layouts/default.html
+  get_social_media_icons.sh
+  _site
+    _site/assets
+      _site/assets/js
+        _site/assets/js/script.js
+      _site/assets/css
+        _site/assets/css/style.css
+      _site/assets/images
+        _site/assets/images/7.jpg
+        _site/assets/images/5.jpg
+        _site/assets/images/15.jpg
+        _site/assets/images/14.png
+        _site/assets/images/8.jpg
+        _site/assets/images/10.jpg
+        _site/assets/images/4.jpg
+        _site/assets/images/1.jpg
+        _site/assets/images/9.jpg
+        _site/assets/images/12.jpg
+        _site/assets/images/13.jpg
+        _site/assets/images/11.jpg
+        _site/assets/images/social-media-icons
+        _site/assets/images/2.jpg
+    _site/contact.md
+    _site/index.md
+    _site/get_social_icons_v2.sh
+    _site/README.md
+    _site/referral.md
+    _site/about.md
+    _site/get_social_media_icons.sh
+  _data
+    _data/social_links.yml
+    _data/images.yml
+  extracted-20240706-144759.txt
+  _includes
+    _includes/footer.html
+    _includes/header.html
+    _includes/navbar.html
+
+Collected Files Content:
+File: ./assets/js/script.js
+// pleasant-painting/assets/js/script.js
+
+document.addEventListener('DOMContentLoaded', function() {
+    const log = console.log;
+    log('Document loaded');
+
+    let images = Array.from(document.querySelectorAll('#image-carousel img'));
+    let currentIndex = 0;
+    
+    // function showNextImage() {
+    //     images[currentIndex].classList.remove('active');
+    //     currentIndex = (currentIndex + 1) % images.length;
+    //     images[currentIndex].classList.add('active');
+    //     log(`Image ${currentIndex + 1} displayed`);
+    // }\
+    
+    function showNextImage() {
+        if (!images[currentIndex]) {
+            console.warn(`Image at index ${currentIndex} not found, skipping to next.`);
+            currentIndex = (currentIndex + 1) % images.length;
+        }
+    
+        images[currentIndex].classList.remove('active');
+        currentIndex = (currentIndex + 1) % images.length;
+    
+        if (images[currentIndex]) {
+            images[currentIndex].classList.add('active');
+            log(`Image ${currentIndex + 1} displayed`);
+        } else {
+            console.warn(`Image at index ${currentIndex} not found, cannot activate.`);
+        }
+    }
+    
+
+    setInterval(showNextImage, 5000);
+
+
+
+    let contactForm = document.getElementById('contact-form');
+    contactForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+        alert('Contact form submitted. You will be redirected to the home page.');
+        window.location.href = '/';
+    });
+
+    let referralForm = document.getElementById('referral-form');
+    referralForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+        alert('Referral form submitted. You will be redirected to the home page.');
+        window.location.href = '/';
+    });
+    
+    const colors = ['#5D6D7E', '#85929E', '#A9CCE3', '#D4E6F1'];
+    let colorIndex = 0;
+
+    setInterval(() => {
+        document.body.style.backgroundColor = colors[colorIndex];
+        colorIndex = (colorIndex + 1) % colors.length;
+        log(`Background color changed to ${colors[colorIndex]}`);
+    }, 15000);
+});
+
+################################################################################
+
+File: ./assets/css/style.css
+/* General styles */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #f0f8ff; /* Light blue beach background */
+    color: #333;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    transition: background-color 0.5s ease; /* Smooth background color transition */
+}
+
+/* Navbar styles */
+#navbar {
+    background-color: rgba(255, 255, 255, 0.8); /* Translucent background */
+    color: #333;
+    padding: 10px 20px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    backdrop-filter: blur(10px); /* Blur effect for modern look */
+}
+
+#navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#navbar li {
+    display: inline;
+    margin: 0 10px;
+}
+
+#navbar a {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s; /* Smooth color transition */
+}
+
+#navbar a:hover {
+    color: #007BFF; /* Beach color */
+}
+
+/* Splash screen */
+#splash-screen {
+    text-align: center;
+    padding: 50px 20px;
+    background: linear-gradient(to right, #ffecd2, #fcb69f); /* Light beach gradient */
+    color: #333;
+    animation: fadeIn 2s ease-in-out; /* Fade-in animation */
+}
+
+#splash-screen h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+#splash-screen p {
+    font-size: 1.2em;
+}
+
+/* Section styles */
+section {
+    padding: 20px;
+    margin: 20px 0;
+    background-color: rgba(255, 255, 255, 0.9); /* Translucent background */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    animation: fadeInUp 1s ease-in-out; /* Fade-in up animation */
+}
+
+h2 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+/* Carousel styles */
+#image-carousel {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+#image-carousel img {
+    width: 100%;
+    height: auto;
+    display: none;
+    transition: opacity 1s ease-in-out; /* Smooth opacity transition */
+}
+
+#image-carousel img.active {
+    display: block;
+    opacity: 1;
+}
+
+/* Form styles */
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px; /* Rounded corners */
+    background-color: rgba(255, 255, 255, 0.9); /* Translucent background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    animation: fadeInUp 1s ease-in-out; /* Fade-in up animation */
+}
+
+form input, form textarea, form button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px; /* Rounded corners */
+}
+
+form button {
+    background-color: #007BFF; /* Beach color */
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transition for background and transform */
+}
+
+form button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+/* Footer styles */
+footer {
+    background-color: rgba(255, 255, 255, 0.8); /* Translucent background */
+    color: #333;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    backdrop-filter: blur(10px); /* Blur effect for modern look */
+}
+
+#social-media {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    animation: fadeIn 2s ease-in-out; /* Fade-in animation */
+}
+
+#social-media a {
+    display: inline-block;
+}
+
+#social-media img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s; /* Smooth transform transition */
+}
+
+#social-media img:hover {
+    transform: scale(1.2); /* Slightly enlarge on hover */
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    #navbar ul {
+        display: block;
+    }
+
+    #navbar li {
+        display: block;
+        margin: 10px 0;
+    }
+}
+
+################################################################################
+
+File: ./contact.md
+<!-- pleasant-painting/contact.md -->
+---
+layout: default
+title: Contact
+permalink: /contact.html
+---
+
+<section id="contact">
+    <h2>Contact Us</h2>
+    <form id="contact-form">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send</button>
+    </form>
+</section>
+
+################################################################################
+
+File: ./index.md
+<!-- pleasant-painting/index.md -->
+---
+layout: default
+title: Home
+---
+
+<div id="splash-screen">
+    <h1>Pleasant Painting LLC</h1>
+    <p>Offering referral bonuses and free estimates</p>
+</div>
+
+<section id="home">
+    <h2>Welcome to Pleasant Painting LLC</h2>
+    <div id="image-carousel">
+        {% for image in site.data.images %}
+            <img src="{{ image }}" alt="Painting Image {{ forloop.index }}" class="{% if forloop.first %}active{% endif %}">
+        {% endfor %}
+    </div>
+</section>
+
+################################################################################
+
+File: ./_config.yml
+title: Pleasant Painting LLC
+email: darionsexton63@gmail.com
+description: >- # this means to ignore newlines until "baseurl:"
+  Pleasant Painting LLC is a licensed, insured, and family-owned professional residential and commercial painting company based in West Palm Beach, Florida.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://yourusername.github.io" # the base hostname & protocol for your site
+
+################################################################################
+
+File: ./get_social_icons_v2.sh
+#!/bin/bash
+
+# Directory to save the icons
+TARGET_DIR="assets/images/social-media-icons"
+
+# Create the directory if it does not exist
+mkdir -p "$TARGET_DIR"
+
+# List of social media icons and their URLs
+declare -A icons
+icons=(
+    ["facebook"]="https://cdn3.iconfinder.com/data/icons/social-media-circle/512/circle-facebook-512.png"
+    ["twitter"]="https://cdn3.iconfinder.com/data/icons/social-media-circle/512/circle-twitter-512.png"
+    ["instagram"]="https://cdn3.iconfinder.com/data/icons/social-media-circle/512/circle-instagram-512.png"
+    ["linkedin"]="https://cdn4.iconfinder.com/data/icons/social-media-logos-6/512/58-linkedin_logo-512.png"
+    ["youtube"]="https://cdn3.iconfinder.com/data/icons/social-media-circle/512/circle-youtube-512.png"
+    ["pinterest"]="https://cdn3.iconfinder.com/data/icons/social-media-2210/24/Pinterest-512.png"
+    ["snapchat"]="https://cdn3.iconfinder.com/data/icons/social-media-circle/512/circle-snapchat-512.png"
+    ["reddit"]="https://cdn3.iconfinder.com/data/icons/social-media-circle/512/circle-reddit-512.png"
+    ["tumblr"]="https://cdn4.iconfinder.com/data/icons/social-media-2210/24/Tumblr-512.png"
+    ["whatsapp"]="https://cdn4.iconfinder.com/data/icons/social-media-2210/24/Whatsapp-512.png"
+)
+
+# Download each icon
+for icon in "${!icons[@]}"; do
+    wget -O "$TARGET_DIR/$icon.png" "${icons[$icon]}"
+done
+
+echo "All icons have been downloaded to $TARGET_DIR"
+
+
+################################################################################
+
+File: ./README.md
+# Pleasant Painting LLC
+
+Pleasant Painting LLC is a licensed, insured, and family-owned residential and commercial painting company based in South Florida.
+
+## Features
+
+- Home page with image carousel and welcome message
+- About page with company description and contact details
+- Contact page with a form to reach out to the company
+- Referral page with a form to refer a friend and get a bonus
+- Social media icons in the footer
+
+## Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/pleasant-painting.git
+   cd pleasant-painting
+   ```
+
+2. Install dependencies:
+   ```bash
+   bundle install
+   ```
+
+3. Serve the site locally:
+   ```bash
+   bundle exec jekyll serve
+   ```
+
+4. Open your web browser and go to `http://localhost:4000`.
+
+## Deployment
+
+The site is deployed on GitHub Pages at `https://yourusername.github.io/pleasant-painting`.
+
+
+
+################################################################################
+
+File: ./referral.md
+<!-- pleasant-painting/referral.md -->
+---
+layout: default
+title: Referral Bonus
+permalink: /referral.html
+---
+
+<section id="referral">
+    <h2>Referral Bonus</h2>
+    <p>Refer a friend and get a bonus! Fill out the form below to refer someone:</p>
+    <form id="referral-form">
+        <input type="text" name="referrer-name" placeholder="Your Name" required>
+        <input type="email" name="referrer-email" placeholder="Your Email" required>
+        <input type="text" name="friend-name" placeholder="Friend's Name" required>
+        <input type="email" name="friend-email" placeholder="Friend's Email" required>
+        <button type="submit">Refer</button>
+    </form>
+</section>
+
+################################################################################
+
+File: ./about.md
+<!-- pleasant-painting/about.md -->
+---
+layout: default
+title: About Us
+permalink: /about.html
+---
+
+<section id="about">
+    <h2>About Us</h2>
+    <p>{{ site.description }}</p>
+    <p>Location: 3972 Saranac Ave, West Palm Beach, FL 33409</p>
+    <p>Phone: <a href="tel:+15615744550">+1 561-574-4550</a></p>
+    <p>Email: <a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+</section>
+
+################################################################################
+
+File: ./mine.sh
+#!/bin/bash
+
+# Allowed file extensions
+ALLOWED_EXTENSIONS=("sh" "java" "bash" "cpp" "js" "jsx" "css" "csx" "ts" "go" "rb" "yml" "yaml" "tf" "py" "md")
+# Directories to exclude
+EXCLUDED_DIRS=("node_modules" ".git" "__pycache__" "dist" "build" "venv")
+
+# Function to check if a file has a valid extension
+is_valid_file() {
+  local filename="$1"
+  for ext in "${ALLOWED_EXTENSIONS[@]}"; do
+    if [[ "$filename" == *.$ext ]]; then
+      return 0
+    fi
+  done
+  return 1
+}
+
+# Function to build tree structure
+build_tree_structure() {
+  local root_dir="$1"
+  local max_depth="$2"
+  local current_depth=0
+
+  find "$root_dir" -mindepth 1 -maxdepth "$max_depth" -type d \( -name "${EXCLUDED_DIRS[0]}" $(printf " -o -name %s" "${EXCLUDED_DIRS[@]:1}") \) -prune -o -print | while read -r path; do
+    depth=$(echo "$path" | awk -F/ '{print NF-1}')
+    indent=$(printf "%*s" $((depth * 2)) "")
+    echo "${indent}${path#$root_dir/}"
+  done
+}
+
+# Function to extract files
+extract_files() {
+  local root_dir="$1"
+  local max_depth="$2"
+  local output_file="$3"
+  local timestamp
+  timestamp=$(date +"%Y%m%d-%H%M%S")
+  [ -z "$output_file" ] && output_file="extracted-$timestamp.txt"
+
+  local collected_files=()
+  local readme_content=""
+  local requirements_content=""
+
+  while IFS= read -r -d '' file; do
+    if is_valid_file "$file"; then
+      collected_files+=("$file")
+    elif [[ "$(basename "$file")" == "README.md" ]]; then
+      readme_content=$(< "$file")
+    elif [[ "$(basename "$file")" == "requirements.txt" ]]; then
+      requirements_content=$(< "$file")
+    fi
+  done < <(find "$root_dir" -mindepth 1 -maxdepth "$max_depth" -type f -print0)
+
+  {
+    echo "Directory Tree Structure:"
+    build_tree_structure "$root_dir" "$max_depth"
+    echo -e "\nCollected Files Content:"
+    for file_path in "${collected_files[@]}"; do
+      if [[ -f "$file_path" ]]; then
+        echo "File: $file_path"
+        cat "$file_path"
+        echo -e "\n################################################################################\n"
+      else
+        echo "Warning: File $file_path not found, skipping."
+      fi
+    done
+    if [ -n "$readme_content" ]; then
+      echo -e "\nREADME Content:\n$readme_content"
+      echo -e "\n################################################################################\n"
+    fi
+    if [ -n "$requirements_content" ]; then
+      echo -e "\nRequirements.txt Content:\n$requirements_content"
+      echo -e "\n################################################################################\n"
+    fi
+  } > "$output_file"
+
+  if [ -n "$requirements_content" ]; then
+    analyze_requirements "$root_dir" "$requirements_content" "$output_file"
+  fi
+
+  echo "Extraction and analysis completed. Check the output file: $output_file"
+}
+
+# Function to analyze requirements
+analyze_requirements() {
+  local root_dir="$1"
+  local requirements_content="$2"
+  local output_file="$3"
+  local matches=()
+
+  IFS=$'\n' read -d '' -r -a requirements <<< "$requirements_content"
+
+  for req in "${requirements[@]}"; do
+    req_matches=()
+    while IFS= read -r -d '' file; do
+      if grep -q "$req" "$file"; then
+        req_matches+=("$file")
+      fi
+    done < <(find "$root_dir" -mindepth 1 -maxdepth 4 -type f -print0)
+
+    matches+=("$req: ${req_matches[*]}")
+  done
+
+  {
+    echo -e "\nRequirements Analysis:"
+    for match in "${matches[@]}"; do
+      echo "$match"
+      match_percentage=$(awk -v matched="${#req_matches[@]}" -v total="${#requirements[@]}" 'BEGIN { printf "%.2f", (matched / total) * 100 }')
+      echo "Match Percentage: $match_percentage%"
+      echo "################################################################################"
+    done
+  } >> "$output_file"
+}
+
+# Main script
+if [ "$#" -lt 1 ]; then
+  echo "Usage: $0 <root_dir> [--output <output_file>]"
+  exit 1
+fi
+
+root_dir="$1"
+output_file=""
+
+while [[ "$#" -gt 0 ]]; do
+  case "$1" in
+    --output)
+      shift
+      output_file="$1"
+      ;;
+    *)
+      root_dir="$1"
+      ;;
+  esac
+  shift
+done
+
+if [ ! -d "$root_dir" ]; then
+  echo "Error: $root_dir is not a valid directory."
+  exit 1
+fi
+
+extract_files "$root_dir" 4 "$output_file"
+
+
+################################################################################
+
+File: ./get_social_media_icons.sh
+#!/bin/bash
+
+# Directory to save the icons
+TARGET_DIR="assets/images/social-media-icons"
+
+# Create the directory if it does not exist
+mkdir -p "$TARGET_DIR"
+
+# List of social media icons and their URLs
+declare -A icons
+icons=(
+    ["facebook"]="https://cdn3.iconfinder.com/data/icons/social-media-circle/512/circle-facebook-512.png"
+    ["twitter"]="https://cdn3.iconfinder.com/data/icons/social-media-circle/512/circle-twitter-512.png"
+    ["instagram"]="https://cdn3.iconfinder.com/data/icons/social-media-circle/512/circle-instagram-512.png"
+    ["linkedin"]="https://cdn3.iconfinder.com/data/icons/social-media-circle/512/circle-linkedin-512.png"
+    ["youtube"]="https://cdn3.iconfinder.com/data/icons/social-media-circle/512/circle-youtube-512.png"
+    ["pinterest"]="https://cdn3.iconfinder.com/data/icons/social-media-circle/512/circle-pinterest-512.png"
+    ["snapchat"]="https://cdn3.iconfinder.com/data/icons/social-media-circle/512/circle-snapchat-512.png"
+    ["reddit"]="https://cdn3.iconfinder.com/data/icons/social-media-circle/512/circle-reddit-512.png"
+    ["tumblr"]="https://cdn3.iconfinder.com/data/icons/social-media-circle/512/circle-tumblr-512.png"
+    ["whatsapp"]="https://cdn3.iconfinder.com/data/icons/social-media-circle/512/circle-whatsapp-512.png"
+)
+
+# Download each icon
+for icon in "${!icons[@]}"; do
+    wget -O "$TARGET_DIR/$icon.png" "${icons[$icon]}"
+done
+
+echo "All icons have been downloaded to $TARGET_DIR"
+
+
+################################################################################
+
+File: ./_site/assets/js/script.js
+// pleasant-painting/assets/js/script.js
+
+document.addEventListener('DOMContentLoaded', function() {
+    const log = console.log;
+    log('Document loaded');
+
+    let images = Array.from(document.querySelectorAll('#image-carousel img'));
+    let currentIndex = 0;
+    
+    // function showNextImage() {
+    //     images[currentIndex].classList.remove('active');
+    //     currentIndex = (currentIndex + 1) % images.length;
+    //     images[currentIndex].classList.add('active');
+    //     log(`Image ${currentIndex + 1} displayed`);
+    // }\
+    
+    function showNextImage() {
+        if (!images[currentIndex]) {
+            console.warn(`Image at index ${currentIndex} not found, skipping to next.`);
+            currentIndex = (currentIndex + 1) % images.length;
+        }
+    
+        images[currentIndex].classList.remove('active');
+        currentIndex = (currentIndex + 1) % images.length;
+    
+        if (images[currentIndex]) {
+            images[currentIndex].classList.add('active');
+            log(`Image ${currentIndex + 1} displayed`);
+        } else {
+            console.warn(`Image at index ${currentIndex} not found, cannot activate.`);
+        }
+    }
+    
+
+    setInterval(showNextImage, 5000);
+
+
+
+    let contactForm = document.getElementById('contact-form');
+    contactForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+        alert('Contact form submitted. You will be redirected to the home page.');
+        window.location.href = '/';
+    });
+
+    let referralForm = document.getElementById('referral-form');
+    referralForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+        alert('Referral form submitted. You will be redirected to the home page.');
+        window.location.href = '/';
+    });
+    
+    const colors = ['#5D6D7E', '#85929E', '#A9CCE3', '#D4E6F1'];
+    let colorIndex = 0;
+
+    setInterval(() => {
+        document.body.style.backgroundColor = colors[colorIndex];
+        colorIndex = (colorIndex + 1) % colors.length;
+        log(`Background color changed to ${colors[colorIndex]}`);
+    }, 15000);
+});
+
+################################################################################
+
+File: ./_site/assets/css/style.css
+/* General styles */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #f0f8ff; /* Light blue beach background */
+    color: #333;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    transition: background-color 0.5s ease; /* Smooth background color transition */
+}
+
+/* Navbar styles */
+#navbar {
+    background-color: rgba(255, 255, 255, 0.8); /* Translucent background */
+    color: #333;
+    padding: 10px 20px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    backdrop-filter: blur(10px); /* Blur effect for modern look */
+}
+
+#navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#navbar li {
+    display: inline;
+    margin: 0 10px;
+}
+
+#navbar a {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s; /* Smooth color transition */
+}
+
+#navbar a:hover {
+    color: #007BFF; /* Beach color */
+}
+
+/* Splash screen */
+#splash-screen {
+    text-align: center;
+    padding: 50px 20px;
+    background: linear-gradient(to right, #ffecd2, #fcb69f); /* Light beach gradient */
+    color: #333;
+    animation: fadeIn 2s ease-in-out; /* Fade-in animation */
+}
+
+#splash-screen h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+#splash-screen p {
+    font-size: 1.2em;
+}
+
+/* Section styles */
+section {
+    padding: 20px;
+    margin: 20px 0;
+    background-color: rgba(255, 255, 255, 0.9); /* Translucent background */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    animation: fadeInUp 1s ease-in-out; /* Fade-in up animation */
+}
+
+h2 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+/* Carousel styles */
+#image-carousel {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+#image-carousel img {
+    width: 100%;
+    height: auto;
+    display: none;
+    transition: opacity 1s ease-in-out; /* Smooth opacity transition */
+}
+
+#image-carousel img.active {
+    display: block;
+    opacity: 1;
+}
+
+/* Form styles */
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px; /* Rounded corners */
+    background-color: rgba(255, 255, 255, 0.9); /* Translucent background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    animation: fadeInUp 1s ease-in-out; /* Fade-in up animation */
+}
+
+form input, form textarea, form button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px; /* Rounded corners */
+}
+
+form button {
+    background-color: #007BFF; /* Beach color */
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transition for background and transform */
+}
+
+form button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+/* Footer styles */
+footer {
+    background-color: rgba(255, 255, 255, 0.8); /* Translucent background */
+    color: #333;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    backdrop-filter: blur(10px); /* Blur effect for modern look */
+}
+
+#social-media {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    animation: fadeIn 2s ease-in-out; /* Fade-in animation */
+}
+
+#social-media a {
+    display: inline-block;
+}
+
+#social-media img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s; /* Smooth transform transition */
+}
+
+#social-media img:hover {
+    transform: scale(1.2); /* Slightly enlarge on hover */
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    #navbar ul {
+        display: block;
+    }
+
+    #navbar li {
+        display: block;
+        margin: 10px 0;
+    }
+}
+
+################################################################################
+
+File: ./_site/contact.md
+<!-- pleasant-painting/contact.md -->
+---
+layout: default
+title: Contact
+permalink: /contact.html
+---
+
+<section id="contact">
+    <h2>Contact Us</h2>
+    <form id="contact-form">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send</button>
+    </form>
+</section>
+
+################################################################################
+
+File: ./_site/index.md
+<!-- pleasant-painting/index.md -->
+---
+layout: default
+title: Home
+---
+
+<div id="splash-screen">
+    <h1>Pleasant Painting LLC</h1>
+    <p>Offering referral bonuses and free estimates</p>
+</div>
+
+<section id="home">
+    <h2>Welcome to Pleasant Painting LLC</h2>
+    <div id="image-carousel">
+        {% for image in site.data.images %}
+            <img src="{{ image }}" alt="Painting Image {{ forloop.index }}" class="{% if forloop.first %}active{% endif %}">
+        {% endfor %}
+    </div>
+</section>
+
+################################################################################
+
+File: ./_site/get_social_icons_v2.sh
+#!/bin/bash
+
+# Directory to save the icons
+TARGET_DIR="assets/images/social-media-icons"
+
+# Create the directory if it does not exist
+mkdir -p "$TARGET_DIR"
+
+# List of social media icons and their URLs
+declare -A icons
+icons=(
+    ["facebook"]="https://cdn3.iconfinder.com/data/icons/social-media-circle/512/circle-facebook-512.png"
+    ["twitter"]="https://cdn3.iconfinder.com/data/icons/social-media-circle/512/circle-twitter-512.png"
+    ["instagram"]="https://cdn3.iconfinder.com/data/icons/social-media-circle/512/circle-instagram-512.png"
+    ["linkedin"]="https://cdn4.iconfinder.com/data/icons/social-media-logos-6/512/58-linkedin_logo-512.png"
+    ["youtube"]="https://cdn3.iconfinder.com/data/icons/social-media-circle/512/circle-youtube-512.png"
+    ["pinterest"]="https://cdn3.iconfinder.com/data/icons/social-media-2210/24/Pinterest-512.png"
+    ["snapchat"]="https://cdn3.iconfinder.com/data/icons/social-media-circle/512/circle-snapchat-512.png"
+    ["reddit"]="https://cdn3.iconfinder.com/data/icons/social-media-circle/512/circle-reddit-512.png"
+    ["tumblr"]="https://cdn4.iconfinder.com/data/icons/social-media-2210/24/Tumblr-512.png"
+    ["whatsapp"]="https://cdn4.iconfinder.com/data/icons/social-media-2210/24/Whatsapp-512.png"
+)
+
+# Download each icon
+for icon in "${!icons[@]}"; do
+    wget -O "$TARGET_DIR/$icon.png" "${icons[$icon]}"
+done
+
+echo "All icons have been downloaded to $TARGET_DIR"
+
+
+################################################################################
+
+File: ./_site/README.md
+# Pleasant Painting LLC
+
+Pleasant Painting LLC is a licensed, insured, and family-owned residential and commercial painting company based in South Florida.
+
+## Features
+
+- Home page with image carousel and welcome message
+- About page with company description and contact details
+- Contact page with a form to reach out to the company
+- Referral page with a form to refer a friend and get a bonus
+- Social media icons in the footer
+
+## Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/pleasant-painting.git
+   cd pleasant-painting
+   ```
+
+2. Install dependencies:
+   ```bash
+   bundle install
+   ```
+
+3. Serve the site locally:
+   ```bash
+   bundle exec jekyll serve
+   ```
+
+4. Open your web browser and go to `http://localhost:4000`.
+
+## Deployment
+
+The site is deployed on GitHub Pages at `https://yourusername.github.io/pleasant-painting`.
+
+
+
+################################################################################
+
+File: ./_site/referral.md
+<!-- pleasant-painting/referral.md -->
+---
+layout: default
+title: Referral Bonus
+permalink: /referral.html
+---
+
+<section id="referral">
+    <h2>Referral Bonus</h2>
+    <p>Refer a friend and get a bonus! Fill out the form below to refer someone:</p>
+    <form id="referral-form">
+        <input type="text" name="referrer-name" placeholder="Your Name" required>
+        <input type="email" name="referrer-email" placeholder="Your Email" required>
+        <input type="text" name="friend-name" placeholder="Friend's Name" required>
+        <input type="email" name="friend-email" placeholder="Friend's Email" required>
+        <button type="submit">Refer</button>
+    </form>
+</section>
+
+################################################################################
+
+File: ./_site/about.md
+<!-- pleasant-painting/about.md -->
+---
+layout: default
+title: About Us
+permalink: /about.html
+---
+
+<section id="about">
+    <h2>About Us</h2>
+    <p>{{ site.description }}</p>
+    <p>Location: 3972 Saranac Ave, West Palm Beach, FL 33409</p>
+    <p>Phone: <a href="tel:+15615744550">+1 561-574-4550</a></p>
+    <p>Email: <a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+</section>
+
+################################################################################
+
+File: ./_site/get_social_media_icons.sh
+#!/bin/bash
+
+# Directory to save the icons
+TARGET_DIR="assets/images/social-media-icons"
+
+# Create the directory if it does not exist
+mkdir -p "$TARGET_DIR"
+
+# List of social media icons and their URLs
+declare -A icons
+icons=(
+    ["facebook"]="https://cdn3.iconfinder.com/data/icons/social-media-circle/512/circle-facebook-512.png"
+    ["twitter"]="https://cdn3.iconfinder.com/data/icons/social-media-circle/512/circle-twitter-512.png"
+    ["instagram"]="https://cdn3.iconfinder.com/data/icons/social-media-circle/512/circle-instagram-512.png"
+    ["linkedin"]="https://cdn3.iconfinder.com/data/icons/social-media-circle/512/circle-linkedin-512.png"
+    ["youtube"]="https://cdn3.iconfinder.com/data/icons/social-media-circle/512/circle-youtube-512.png"
+    ["pinterest"]="https://cdn3.iconfinder.com/data/icons/social-media-circle/512/circle-pinterest-512.png"
+    ["snapchat"]="https://cdn3.iconfinder.com/data/icons/social-media-circle/512/circle-snapchat-512.png"
+    ["reddit"]="https://cdn3.iconfinder.com/data/icons/social-media-circle/512/circle-reddit-512.png"
+    ["tumblr"]="https://cdn3.iconfinder.com/data/icons/social-media-circle/512/circle-tumblr-512.png"
+    ["whatsapp"]="https://cdn3.iconfinder.com/data/icons/social-media-circle/512/circle-whatsapp-512.png"
+)
+
+# Download each icon
+for icon in "${!icons[@]}"; do
+    wget -O "$TARGET_DIR/$icon.png" "${icons[$icon]}"
+done
+
+echo "All icons have been downloaded to $TARGET_DIR"
+
+
+################################################################################
+
+File: ./_data/social_links.yml
+- name: Facebook
+  url: https://www.facebook.com
+  icon: facebook.png
+- name: Twitter
+  url: https://www.twitter.com
+  icon: twitter.png
+- name: Instagram
+  url: https://www.instagram.com
+  icon: instagram.png
+- name: LinkedIn
+  url: https://www.linkedin.com
+  icon: linkedin.png
+- name: YouTube
+  url: https://www.youtube.com
+  icon: youtube.png
+- name: Pinterest
+  url: https://www.pinterest.com
+  icon: pinterest.png
+- name: Snapchat
+  url: https://www.snapchat.com
+  icon: snapchat.png
+- name: Reddit
+  url: https://www.reddit.com
+  icon: reddit.png
+- name: Tumblr
+  url: https://www.tumblr.com
+  icon: tumblr.png
+- name: WhatsApp
+  url: https://www.whatsapp.com
+  icon: whatsapp.png
+
+################################################################################
+
+File: ./_data/images.yml
+- /assets/images/image1.jpg
+- /assets/images/image2.jpg
+- /assets/images/image3.jpg
+- /assets/images/image4.jpg
+- /assets/images/image5.jpg
+- /assets/images/image6.jpg
+- /assets/images/image7.jpg
+- /assets/images/image8.jpg
+- /assets/images/image9.jpg
+- /assets/images/image10.jpg
+- /assets/images/image11.jpg
+- /assets/images/image12.png
+- /assets/images/image13.jpg
+- /assets/images/image14.png
+- /assets/images/image15.jpg
+
+################################################################################
+

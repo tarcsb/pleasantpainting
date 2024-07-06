@@ -1,6 +1,22 @@
-title: Pleasant Painting LLC
-email: darionsexton63@gmail.com
-description: >- # this means to ignore newlines until "baseurl:"
-  Pleasant Painting LLC is a licensed, insured, and family-owned professional residential and commercial painting company based in West Palm Beach, Florida.
+title: "Pleasant Painting LLC"
+email: "darionsexton63@gmail.com"
+description: "Pleasant Painting LLC is a licensed, insured, and family-owned professional residential and commercial painting company based in West Palm Beach, Florida."
+url: "https://pleasantpainting.com" # the base hostname & protocol for your site
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://yourusername.github.io" # the base hostname & protocol for your site
+twitter_username: "pleasantpainting"
+github_username: "pleasantpainting"
+instagram_username: "pleasantpainting"
+facebook_username: "pleasantpainting"
+linkedin_username: "pleasantpainting"
+youtube_username: "pleasantpainting"
+services:
+  - Residential Painting
+  - Commercial Painting
+  - Custom Painting
+  - Restoration
+  - Driveway Painting
+  - Pressure Cleaning
+  - Color Matching
+  - Free Estimates
+  - Virtual Consults
+  - Tech Tools for Visualization

@@ -1,57 +1,87 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home | Pleasant Painting LLC</title>
-    <meta name="description" content="Pleasant Painting LLC is a licensed, insured, and family-owned professional residential and commercial painting company based in West Palm Beach, Florida.">
-    <meta name="keywords" content="painting, residential painting, commercial painting, custom painting, pressure cleaning, color matching, free estimates, virtual consults">
-    <meta name="author" content="Pleasant Painting LLC">
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Home | Pleasant Painting LLC">
-    <meta property="og:description" content="Pleasant Painting LLC is a licensed, insured, and family-owned professional residential and commercial painting company based in West Palm Beach, Florida.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="http://localhost:4000/">
-    <meta property="og:image" content="http://localhost:4000/assets/images/logo.png">
-    <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Home | Pleasant Painting LLC">
-    <meta name="twitter:description" content="Pleasant Painting LLC is a licensed, insured, and family-owned professional residential and commercial painting company based in West Palm Beach, Florida.">
-    <meta name="twitter:image" content="http://localhost:4000/assets/images/logo.png">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="/assets/css/style.css">
-</head>
-<body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="/">Pleasant Painting LLC</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="/about.html">About</a></li>
-            <li class="nav-item"><a class="nav-link" href="/contact.html">Contact</a></li>
-            <li class="nav-item"><a class="nav-link" href="/blog.html">Blog</a></li>
-            <li class="nav-item"><a class="nav-link" href="/color-visualizer.html">Color Visualizer</a></li>
-            <li class="nav-item">
-                <a class="btn btn-primary nav-link text-white" href="#quote-form">Get a Quote</a>
-            </li>
-        </ul>
-    </div>
-</nav>
-
-    <div class="container mt-4">
-        <div id="splash-screen" class="text-center p-5" style="position: relative; background: url('/assets/images/splash-bg.jpg') center/cover no-repeat;">
-    <div class="overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5);"></div>
-    <div class="content" style="position: relative; z-index: 1; color: white;">
-        <h1>Pleasant Painting LLC</h1>
-        <p>Pleasant Painting LLC is a licensed, insured, and family-owned professional residential and commercial painting company based in West Palm Beach, Florida.</p>
-        <a class="btn btn-primary" href="#quote-form" style="background-color: var(--primary-color); border: none; padding: 10px 20px; font-size: 1.2em; border-radius: 25px;">Let's Paint</a>
-    </div>
+I"±1<div id="splash-screen" class="text-center p-5 bg-dark text-white">
+    <h1>Pleasant Painting LLC</h1>
+    <p>Pleasant Painting LLC is a licensed, insured, and family-owned professional residential and commercial painting company based in West Palm Beach, Florida.</p>
+    <a class="btn btn-primary" href="#quote-form">Get a Quote</a>
 </div>
+
+<section id="services" class="my-5">
+    <div class="container">
+        <h2 class="text-center">Our Services</h2>
+        <div class="row text-center">
+            
+            <div class="col-md-4">
+                <div class="service-box">
+                    <h3>Residential Painting</h3>
+                    <p>Professional and high-quality residential painting services.</p>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="service-box">
+                    <h3>Commercial Painting</h3>
+                    <p>Professional and high-quality commercial painting services.</p>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="service-box">
+                    <h3>Custom Painting</h3>
+                    <p>Professional and high-quality custom painting services.</p>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="service-box">
+                    <h3>Restoration</h3>
+                    <p>Professional and high-quality restoration services.</p>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="service-box">
+                    <h3>Driveway Painting</h3>
+                    <p>Professional and high-quality driveway painting services.</p>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="service-box">
+                    <h3>Pressure Cleaning</h3>
+                    <p>Professional and high-quality pressure cleaning services.</p>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="service-box">
+                    <h3>Color Matching</h3>
+                    <p>Professional and high-quality color matching services.</p>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="service-box">
+                    <h3>Free Estimates</h3>
+                    <p>Professional and high-quality free estimates services.</p>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="service-box">
+                    <h3>Virtual Consults</h3>
+                    <p>Professional and high-quality virtual consults services.</p>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="service-box">
+                    <h3>Tech Tools for Visualization</h3>
+                    <p>Professional and high-quality tech tools for visualization services.</p>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>
 
 <section id="gallery" class="my-5">
     <div class="container">
@@ -132,59 +162,34 @@
     </div>
 </section>
 
-<section id="services" class="my-5">
+<section id="testimonials" class="my-5">
     <div class="container">
-        <h2 class="text-center">Our Services</h2>
-        <div class="row text-center">
-            
-            <div class="col-md-4 mb-4">
-                <div class="service-button">
-                    <span class="service-label">Residential Painting</span>
+        <h2 class="text-center">Testimonials</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <p class="card-text">"Pleasant Painting LLC did an amazing job on our house! Highly recommend!"</p>
+                        <footer class="blockquote-footer">Jane Doe</footer>
+                    </div>
                 </div>
             </div>
-            
-            <div class="col-md-4 mb-4">
-                <div class="service-button">
-                    <span class="service-label">Commercial Painting</span>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <p class="card-text">"Professional, timely, and excellent workmanship."</p>
+                        <footer class="blockquote-footer">John Smith</footer>
+                    </div>
                 </div>
             </div>
-            
-            <div class="col-md-4 mb-4">
-                <div class="service-button">
-                    <span class="service-label">Restoration</span>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <p class="card-text">"Great experience from start to finish. The team was fantastic."</p>
+                        <footer class="blockquote-footer">Sarah Lee</footer>
+                    </div>
                 </div>
             </div>
-            
-            <div class="col-md-4 mb-4">
-                <div class="service-button">
-                    <span class="service-label">Driveway Painting</span>
-                </div>
-            </div>
-            
-            <div class="col-md-4 mb-4">
-                <div class="service-button">
-                    <span class="service-label">Pressure Cleaning</span>
-                </div>
-            </div>
-            
-            <div class="col-md-4 mb-4">
-                <div class="service-button">
-                    <span class="service-label">Color Matching</span>
-                </div>
-            </div>
-            
-            <div class="col-md-4 mb-4">
-                <div class="service-button">
-                    <span class="service-label">Free Estimates</span>
-                </div>
-            </div>
-            
-            <div class="col-md-4 mb-4">
-                <div class="service-button">
-                    <span class="service-label">Virtual Consulting</span>
-                </div>
-            </div>
-            
         </div>
     </div>
 </section>
@@ -211,7 +216,7 @@
                     </div>
                 </div>
             </div>
-            <!-- <div class="col-md-4">
+            <div class="col-md-4">
                 <div class="card mb-4">
                     <div class="card-body">
                         <h5 class="card-title">Affordable Living</h5>
@@ -219,7 +224,7 @@
                         <a href="https://www.hud.gov/topics/rental_assistance" class="btn btn-primary">Learn More</a>
                     </div>
                 </div>
-            </div> -->
+            </div>
         </div>
     </div>
 </section>
@@ -268,34 +273,8 @@
                 <input type="file" class="form-control" name="images" accept="image/*" multiple="" required="" />
                 <small class="form-text text-muted">Please upload up to three images to help us understand your requirements better.</small>
             </div>
-            <button type="submit" class="btn btn-primary" style="background-color: var(--primary-color); border-radius: 25px;">Send</button>
+            <button type="submit" class="btn btn-primary">Send</button>
         </form>
     </div>
 </section>
-
-    </div>
-    <footer class="bg-dark text-white text-center py-4">
-    <div class="container">
-        <p>&copy; 2024 Pleasant Painting LLC</p>
-        <p>Location: 3972 Saranac Ave, West Palm Beach, FL 33409</p>
-        <p>Phone: <a href="tel:+15615744550" class="text-white">+1 561-574-4550</a></p>
-        <p>Email: <a href="mailto:darionsexton63@gmail.com" class="text-white">darionsexton63@gmail.com</a></p>
-        <p>Business Hours: Mon-Fri: 8am - 6pm, Sat-Sun: By appointment</p>
-        <div id="social-media" class="d-flex justify-content-center">
-            <a href="https://www.facebook.com" class="mx-2"><img src="/assets/images/social-media-icons/facebook.png" alt="Facebook"></a>
-            <a href="https://www.twitter.com" class="mx-2"><img src="/assets/images/social-media-icons/twitter.png" alt="Twitter"></a>
-            <a href="https://www.instagram.com" class="mx-2"><img src="/assets/images/social-media-icons/instagram.png" alt="Instagram"></a>
-            <a href="https://www.linkedin.com" class="mx-2"><img src="/assets/images/social-media-icons/linkedin.png" alt="LinkedIn"></a>
-            <a href="https://www.youtube.com" class="mx-2"><img src="/assets/images/social-media-icons/youtube.png" alt="YouTube"></a>
-        </div>
-    </div>
-</footer>
-
-    <!-- Bootstrap JS and dependencies -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <!-- Custom JS -->
-    <script src="/assets/js/script.js"></script>
-</body>
-</html>
+:ET

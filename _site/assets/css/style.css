@@ -70,14 +70,15 @@ body {
 #splash-screen .btn {
     margin-top: 20px;
     animation: fadeIn 2.5s ease-in-out;
-    background-color: var(--accent-color);
+    background-color: var(--primary-color);
     border: none;
     padding: 10px 20px;
     font-size: 1.2em;
+    border-radius: 25px;
 }
 
 #splash-screen .btn:hover {
-    background-color: #ff8c8c; /* Lighter coral */
+    background-color: var(--secondary-color);
 }
 
 /* Section styles */
@@ -97,20 +98,29 @@ h2 {
     color: var(--primary-color);
 }
 
-.service-box {
-    animation: fadeInUp 1.5s ease-in-out;
-    padding: 20px;
+.service-button {
+    position: relative;
+    width: 100%;
+    height: 100px;
+    background-color: rgba(76, 205, 196, 0.3);
     border-radius: 10px;
-    background: var(--background-color);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 2px solid transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
-.service-box h3 {
-    color: var(--secondary-color);
+.service-button:hover {
+    background-color: rgba(76, 205, 196, 0.5);
+    border-color: var(--accent-color);
 }
 
-.service-box p {
-    color: var(--text-color);
+.service-label {
+    color: black;
+    font-size: 1.5em;
+    text-align: center;
+    width: 100%;
 }
 
 /* Image carousel styles */
@@ -165,6 +175,7 @@ form button {
     color: var(--light-text-color);
     border: none;
     cursor: pointer;
+    border-radius: 25px;
 }
 
 form button:hover {
@@ -232,7 +243,11 @@ footer {
         width: 100%;
     }
 
-    .service-box {
-        padding: 10px;
+    .service-button {
+        height: 100px;
+    }
+
+    .service-label {
+        font-size: 1.2em;
     }
 }

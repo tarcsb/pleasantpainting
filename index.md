@@ -8,107 +8,9 @@ title: Home
     <div class="content" style="position: relative; z-index: 1; color: white;">
         <h1>{{ site.title }}</h1>
         <p>{{ site.description }}</p>
-        <a class="btn btn-primary" href="#quote-form" style="background-color: #ff6b6b; border: none; padding: 10px 20px; font-size: 1.2em;">Let's Paint</a>
+        <a class="btn btn-primary" href="#quote-form" style="background-color: var(--primary-color); border: none; padding: 10px 20px; font-size: 1.2em; border-radius: 25px;">Let's Paint</a>
     </div>
 </div>
-
-<section id="services" class="my-5">
-    <div class="container">
-        <h2 class="text-center">Our Services</h2>
-        <div class="row text-center">
-            <div class="col-md-4">
-                <div class="card mb-4">
-                    <img class="card-img-top" src="/assets/images/services/residential-painting.jpg" alt="Residential Painting">
-                    <div class="card-body">
-                        <h5 class="card-title">Residential Painting</h5>
-                        <p class="card-text">Transform your home with our expert touch.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card mb-4">
-                    <img class="card-img-top" src="/assets/images/services/commercial-painting.jpg" alt="Commercial Painting">
-                    <div class="card-body">
-                        <h5 class="card-title">Commercial Painting</h5>
-                        <p class="card-text">Professional results for your business.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card mb-4">
-                    <img class="card-img-top" src="/assets/images/services/custom-painting.jpg" alt="Custom Painting">
-                    <div class="card-body">
-                        <h5 class="card-title">Custom Painting</h5>
-                        <p class="card-text">Your vision, our canvas.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card mb-4">
-                    <img class="card-img-top" src="/assets/images/services/restoration.jpg" alt="Restoration">
-                    <div class="card-body">
-                        <h5 class="card-title">Restoration</h5>
-                        <p class="card-text">Reviving the beauty of your space.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card mb-4">
-                    <img class="card-img-top" src="/assets/images/services/driveway-painting.jpg" alt="Driveway Painting">
-                    <div class="card-body">
-                        <h5 class="card-title">Driveway Painting</h5>
-                        <p class="card-text">A fresh look for your driveway.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card mb-4">
-                    <img class="card-img-top" src="/assets/images/services/pressure-cleaning.jpg" alt="Pressure Cleaning">
-                    <div class="card-body">
-                        <h5 class="card-title">Pressure Cleaning</h5>
-                        <p class="card-text">Spotless results, every time.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card mb-4">
-                    <img class="card-img-top" src="/assets/images/services/color-matching.jpg" alt="Color Matching">
-                    <div class="card-body">
-                        <h5 class="card-title">Color Matching</h5>
-                        <p class="card-text">Perfect shades, perfect harmony.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card mb-4">
-                    <img class="card-img-top" src="/assets/images/services/free-estimates.jpg" alt="Free Estimates">
-                    <div class="card-body">
-                        <h5 class="card-title">Free Estimates</h5>
-                        <p class="card-text">Get a quote, no strings attached.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card mb-4">
-                    <img class="card-img-top" src="/assets/images/services/virtual-consults.jpg" alt="Virtual Consults">
-                    <div class="card-body">
-                        <h5 class="card-title">Virtual Consults</h5>
-                        <p class="card-text">Consult with us from anywhere.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card mb-4">
-                    <img class="card-img-top" src="/assets/images/services/tech-tools.jpg" alt="Tech Tools">
-                    <div class="card-body">
-                        <h5 class="card-title">Tech Tools for Visualization</h5>
-                        <p class="card-text">Visualize your project with ease.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 
 <section id="gallery" class="my-5">
     <div class="container">
@@ -133,7 +35,21 @@ title: Home
     </div>
 </section>
 
-{% include testimonials.html %}
+<section id="services" class="my-5">
+    <div class="container">
+        <h2 class="text-center">Our Services</h2>
+        <div class="row text-center">
+            {% for service in site.data.services.services %}
+            <div class="col-md-4 mb-4">
+                <div class="service-button">
+                    <span class="service-label">{{ service.name }}</span>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
 {% include incentives.html %}
 {% include affiliate-marketing.html %}
 {% include cta.html %}
@@ -174,7 +90,7 @@ title: Home
                 <input type="file" class="form-control" name="images" accept="image/*" multiple required>
                 <small class="form-text text-muted">Please upload up to three images to help us understand your requirements better.</small>
             </div>
-            <button type="submit" class="btn btn-primary">Send</button>
+            <button type="submit" class="btn btn-primary" style="background-color: var(--primary-color); border-radius: 25px;">Send</button>
         </form>
     </div>
 </section>

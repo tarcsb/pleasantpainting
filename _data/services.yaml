@@ -1,0 +1,9 @@
+services:
+  - name: Residential Painting
+  - name: Commercial Painting
+  - name: Restoration
+  - name: Driveway Painting
+  - name: Pressure Cleaning
+  - name: Color Matching
+  - name: Free Estimates
+  - name: Virtual Consulting

@@ -1,19 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- Add this to _layouts/default.html, replacing the header section -->
-<header id="hero" class="d-flex align-items-center">
-    <div class="container text-center">
-        <h1>Welcome to Pleasant Painting LLC</h1>
-        <p>Professional painting services in South Florida</p>
-        <a href="#services" class="btn btn-primary">Our Services</a>
-    </div>
-</header>
-
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }} | {{ site.title }}</title>
+    <meta name="description" content="{{ page.description | default: site.description }}">
+    <meta name="keywords" content="painting, residential painting, commercial painting, custom painting, pressure cleaning, color matching, free estimates, virtual consults">
+    <meta name="author" content="Pleasant Painting LLC">
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="{{ page.title }} | {{ site.title }}">
+    <meta property="og:description" content="{{ page.description | default: site.description }}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+    <meta property="og:image" content="{{ site.url }}/assets/images/logo.png">
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ page.title }} | {{ site.title }}">
+    <meta name="twitter:description" content="{{ page.description | default: site.description }}">
+    <meta name="twitter:image" content="{{ site.url }}/assets/images/logo.png">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ '/assets/css/theme.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
 <body>
     {% include navbar.html %}
     <div class="container mt-4">
         {{ content }}
     </div>
+    <a href="#top" class="scroll-to-top">↑</a>
     <button id="theme-toggle" class="btn btn-secondary">Toggle Theme</button>
     {% include footer.html %}
     <!-- Bootstrap JS and dependencies -->
@@ -22,10 +42,5 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <!-- Custom JS -->
     <script src="{{ '/assets/js/script.js' | relative_url }}"></script>
-    <!-- Add this to _layouts/default.html before the closing </body> tag -->
-<a href="#quote-form" class="fab">Contact Us</a>
-<!-- Add this to _layouts/default.html before the closing </body> tag -->
-<a href="#" id="scroll-to-top" class="scroll-to-top">↑</a>
-
 </body>
 </html>

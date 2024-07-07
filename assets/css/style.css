@@ -16,6 +16,10 @@ body {
 .navbar {
     background-color: var(--primary-color);
     padding: 1rem 1.5rem;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
     transition: background-color var(--transition-duration);
 }
 
@@ -30,6 +34,37 @@ body {
 
 .navbar-toggler {
     border-color: var(--light-text-color);
+}
+
+.nav-link {
+    margin-right: 20px;
+}
+
+.navbar-nav {
+    text-align: center;
+}
+
+.navbar-nav .nav-item {
+    margin: 0 10px;
+}
+
+.navbar-nav .nav-link {
+    padding: 10px 15px;
+}
+
+@media (max-width: 768px) {
+    .navbar-nav .nav-item {
+        margin: 10px 0;
+    }
+
+    .navbar-nav .nav-link {
+        padding: 10px;
+    }
+
+    .nav-link {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
 }
 
 /* Section styles */
@@ -50,29 +85,50 @@ h2 {
     color: var(--primary-color);
 }
 
+/* Service button styles */
 .service-button {
-    position: relative;
-    width: 100%;
-    height: 120px;
-    background-color: rgba(76, 205, 196, 0.3);
-    border-radius: var(--border-radius);
-    border: 2px solid transparent;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: background-color var(--transition-duration), border-color var(--transition-duration);
+    height: 150px;
+    background-color: rgba(76, 205, 196, 0.2);
+    border-radius: var(--border-radius);
+    border: 2px solid transparent;
+    transition: background-color var(--transition-duration), box-shadow var(--transition-duration), transform var(--transition-duration);
+    position: relative;
+    overflow: hidden;
 }
 
 .service-button:hover {
-    background-color: rgba(76, 205, 196, 0.5);
-    border-color: var(--accent-color);
+    background-color: rgba(76, 205, 196, 0.4);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+}
+
+.service-button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(102, 179, 186, 0.5), rgba(255, 154, 141, 0.5));
+    opacity: 0;
+    transition: opacity var(--transition-duration);
+    z-index: 1;
+}
+
+.service-button:hover::before {
+    opacity: 1;
 }
 
 .service-label {
-    color: black;
-    font-size: 1.8em;
+    position: relative;
+    z-index: 2;
+    color: var(--text-color);
+    font-size: 1.5em;
     text-align: center;
-    width: 100%;
+    transition: color var(--transition-duration);
 }
 
 /* Image carousel styles */
@@ -134,6 +190,24 @@ form button:hover {
     background-color: var(--secondary-color);
 }
 
+.form-control {
+    border: 2px solid var(--primary-color);
+    border-radius: 5px;
+    padding: 10px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.form-group label {
+    font-size: 1.1em;
+    color: var(--text-color);
+    margin-bottom: 5px;
+}
+
 /* Footer styles */
 footer {
     background-color: var(--primary-color);
@@ -153,6 +227,183 @@ footer {
     display: inline-block;
 }
 
+/* Floating action button styles */
+.fab {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--primary-color);
+    color: var(--light-text-color);
+    padding: 15px 20px;
+    border-radius: 50%;
+    box-shadow: var(--box-shadow);
+    font-size: 1.5rem;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color var(--transition-duration), transform var(--transition-duration);
+}
+
+.fab:hover {
+    background-color: var(--secondary-color);
+    transform: scale(1.1);
+}
+
+/* Scroll to top button styles */
+.scroll-to-top {
+    position: fixed;
+    bottom: 70px;
+    right: 20px;
+    background-color: var(--primary-color);
+    color: var(--light-text-color);
+    padding: 10px 15px;
+    border-radius: 50%;
+    box-shadow: var(--box-shadow);
+    font-size: 1.5rem;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color var(--transition-duration), transform var(--transition-duration);
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1000;
+}
+
+.scroll-to-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+}
+
+.scroll-to-top:hover {
+    background-color: var(--secondary-color);
+}
+
+/* Card styles */
+.card {
+    border: none;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-img-top {
+    border-top-left-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-title {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+.card-text {
+    font-size: 1em;
+    color: var(--text-color);
+}
+
+/* Stylish links */
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+a:hover {
+    color: var(--secondary-color);
+    text-decoration: underline;
+}
+
+/* Navbar links */
+.nav-link {
+    position: relative;
+    padding: 10px 0;
+    color: var(--light-text-color);
+    transition: color 0.3s ease;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent-color);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.nav-link:hover {
+    color: var(--accent-color);
+}
+
+/* Button styles */
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--light-text-color);
+    border: none;
+    border-radius: 25px;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+    transform: translateY(-3px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    border-radius: 25px;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background: var(--primary-color);
+    color: var(--light-text-color);
+    transform: translateY(-3px);
+}
+
+/* Color visualizer styles */
+.visualizer {
+    text-align: center;
+}
+
+.visualizer img {
+    max-width: 100%;
+    margin-bottom: 20px;
+}
+
+.visualizer input {
+    width: 50px;
+    height: 50px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Add icons margin */
+.btn i, .nav-link i {
+    margin-right: 8px;
+}
+
 /* Animations */
 @keyframes fadeIn {
     from { opacity: 0; }
@@ -161,15 +412,6 @@ footer {
 
 /* Responsive styles */
 @media (max-width: 768px) {
-    .navbar ul {
-        display: block;
-    }
-
-    .navbar li {
-        display: block;
-        margin: 10px 0;
-    }
-
     h2 {
         font-size: 2em;
     }
@@ -195,220 +437,4 @@ footer {
     .service-label {
         font-size: 1.4em;
     }
-}
-
-/* Add this to assets/css/style.css */
-.fab {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: var(--primary-color);
-    color: var(--light-text-color);
-    padding: 15px 20px;
-    border-radius: 50%;
-    box-shadow: var(--box-shadow);
-    font-size: 1.5rem;
-    text-align: center;
-    text-decoration: none;
-    transition: background-color var(--transition-duration), transform var(--transition-duration);
-}
-
-.fab:hover {
-    background-color: var(--secondary-color);
-    transform: scale(1.1);
-}
-
-
-/* Add this to assets/css/style.css */
-.navbar-nav {
-    text-align: center;
-}
-
-.navbar-nav .nav-item {
-    margin: 0 10px;
-}
-
-.navbar-nav .nav-link {
-    padding: 10px 15px;
-}
-
-@media (max-width: 768px) {
-    .navbar-nav .nav-item {
-        margin: 10px 0;
-    }
-
-    .navbar-nav .nav-link {
-        padding: 10px;
-    }
-}
-
-/* Add this to assets/css/style.css */
-body {
-    background: linear-gradient(to right, #66b3ba, #ff9a8d);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    color: var(--text-color);
-}
-
-section {
-    background: rgba(255, 255, 255, 0.9);
-    padding: var(--padding-section);
-    margin: var(--margin-section);
-    border-radius: var(--border-radius);
-    box-shadow: var(--box-shadow);
-    transition: background var(--transition-duration), box-shadow var(--transition-duration);
-}
-
-/* Add this to assets/css/style.css */
-.service-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 150px;
-    background-color: rgba(76, 205, 196, 0.2);
-    border-radius: var(--border-radius);
-    border: 2px solid transparent;
-    transition: background-color var(--transition-duration), box-shadow var(--transition-duration), transform var(--transition-duration);
-    position: relative;
-    overflow: hidden;
-}
-
-.service-button:hover {
-    background-color: rgba(76, 205, 196, 0.4);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    transform: translateY(-5px);
-}
-
-.service-button::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(45deg, rgba(102, 179, 186, 0.5), rgba(255, 154, 141, 0.5));
-    opacity: 0;
-    transition: opacity var(--transition-duration);
-    z-index: 1;
-}
-
-.service-button:hover::before {
-    opacity: 1;
-}
-
-.service-label {
-    position: relative;
-    z-index: 2;
-    color: var(--text-color);
-    font-size: 1.5em;
-    text-align: center;
-    transition: color var(--transition-duration);
-}
-
-/* Add this to assets/css/style.css */
-.navbar {
-    background-color: var(--primary-color);
-    padding: 1rem 1.5rem;
-    position: sticky;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    transition: background-color var(--transition-duration);
-}
-
-.navbar-brand, .nav-link {
-    color: var(--light-text-color) !important;
-    transition: color var(--transition-duration);
-}
-
-.navbar-brand:hover, .nav-link:hover {
-    color: var(--accent-color) !important;
-}
-
-.navbar-toggler {
-    border-color: var(--light-text-color);
-}
-
-.nav-link {
-    margin-right: 20px;
-}
-
-@media (max-width: 768px) {
-    .nav-link {
-        margin-right: 0;
-        margin-bottom: 10px;
-    }
-}
-/* Add this to assets/css/style.css */
-.visualizer {
-    text-align: center;
-}
-
-.visualizer img {
-    max-width: 100%;
-    margin-bottom: 20px;
-}
-
-.visualizer input {
-    width: 50px;
-    height: 50px;
-    border: none;
-    cursor: pointer;
-}
-/* Add this to assets/css/style.css */
-.scroll-to-top {
-    position: fixed;
-    bottom: 70px;
-    right: 20px;
-    background-color: var(--primary-color);
-    color: var(--light-text-color);
-    padding: 10px 15px;
-    border-radius: 50%;
-    box-shadow: var(--box-shadow);
-    font-size: 1.5rem;
-    text-align: center;
-    text-decoration: none;
-    transition: background-color var(--transition-duration), transform var(--transition-duration);
-    opacity: 0;
-    visibility: hidden;
-    z-index: 1000;
-}
-
-.scroll-to-top.show {
-    opacity: 1;
-    visibility: visible;
-    transform: scale(1);
-}
-
-.scroll-to-top:hover {
-    background-color: var(--secondary-color);
-}
-
-/* Add this to assets/css/style.css */
-.scroll-to-top {
-    position: fixed;
-    bottom: 70px;
-    right: 20px;
-    background-color: var(--primary-color);
-    color: var(--light-text-color);
-    padding: 10px 15px;
-    border-radius: 50%;
-    box-shadow: var(--box-shadow);
-    font-size: 1.5rem;
-    text-align: center;
-    text-decoration: none;
-    transition: background-color var(--transition-duration), transform var(--transition-duration);
-    opacity: 0;
-    visibility: hidden;
-    z-index: 1000;
-}
-
-.scroll-to-top.show {
-    opacity: 1;
-    visibility: visible;
-    transform: scale(1);
-}
-
-.scroll-to-top:hover {
-    background-color: var(--secondary-color);
 }

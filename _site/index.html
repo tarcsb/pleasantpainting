@@ -1,59 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home | Pleasant Painting LLC</title>
-    <meta name="description" content="Pleasant Painting LLC is a licensed, insured, and family-owned professional residential and commercial painting company based in West Palm Beach, Florida.">
-    <meta name="keywords" content="painting, residential painting, commercial painting, custom painting, pressure cleaning, color matching, free estimates, virtual consults">
-    <meta name="author" content="Pleasant Painting LLC">
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Home | Pleasant Painting LLC">
-    <meta property="og:description" content="Pleasant Painting LLC is a licensed, insured, and family-owned professional residential and commercial painting company based in West Palm Beach, Florida.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="http://localhost:4000/">
-    <meta property="og:image" content="http://localhost:4000/assets/images/logo.png">
-    <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Home | Pleasant Painting LLC">
-    <meta name="twitter:description" content="Pleasant Painting LLC is a licensed, insured, and family-owned professional residential and commercial painting company based in West Palm Beach, Florida.">
-    <meta name="twitter:image" content="http://localhost:4000/assets/images/logo.png">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="/assets/css/style.css">
-</head>
+<!-- Add this to _layouts/default.html, replacing the header section -->
+<header id="hero" class="d-flex align-items-center">
+    <div class="container text-center">
+        <h1>Welcome to Pleasant Painting LLC</h1>
+        <p>Professional painting services in South Florida</p>
+        <a href="#services" class="btn btn-primary">Our Services</a>
+    </div>
+</header>
+
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="/">Pleasant Painting LLC</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="/about.html">About</a></li>
-            <li class="nav-item"><a class="nav-link" href="/contact.html">Contact</a></li>
-            <li class="nav-item"><a class="nav-link" href="/blog.html">Blog</a></li>
-            <li class="nav-item"><a class="nav-link" href="/color-visualizer.html">Color Visualizer</a></li>
-            <li class="nav-item">
-                <a class="btn btn-primary nav-link text-white" href="#quote-form">Get a Quote</a>
-            </li>
-        </ul>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container">
+        <a class="navbar-brand" href="/">Pleasant Painting LLC</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="/about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="/contact.html">Contact</a></li>
+                <li class="nav-item"><a class="nav-link" href="/blog.html">Blog</a></li>
+                <li class="nav-item"><a class="nav-link" href="/color-visualizer.html">Color Visualizer</a></li>
+                <li class="nav-item">
+                    <a class="btn btn-primary nav-link text-white" href="#quote-form">Get a Quote</a>
+                </li>
+            </ul>
+        </div>
     </div>
 </nav>
 
     <div class="container mt-4">
-        <div id="splash-screen" class="text-center p-5" style="position: relative; background: url('/assets/images/splash-bg.jpg') center/cover no-repeat;">
-    <div class="overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5);"></div>
-    <div class="content" style="position: relative; z-index: 1; color: white;">
-        <h1>Pleasant Painting LLC</h1>
-        <p>Pleasant Painting LLC is a licensed, insured, and family-owned professional residential and commercial painting company based in West Palm Beach, Florida.</p>
-        <a class="btn btn-primary" href="#quote-form" style="background-color: var(--primary-color); border: none; padding: 10px 20px; font-size: 1.2em; border-radius: 25px;">Let's Paint</a>
-    </div>
-</div>
-
-<section id="gallery" class="my-5">
+        <section id="gallery" class="my-5">
     <div class="container">
         <h2 class="text-center">Our Work</h2>
         <div id="image-carousel" class="carousel slide" data-ride="carousel">
@@ -139,49 +118,49 @@
             
             <div class="col-md-4 mb-4">
                 <div class="service-button">
-                    <span class="service-label">Residential Painting</span>
+                    <span class="service-label">{"name"=&gt;"Residential Painting"}</span>
                 </div>
             </div>
             
             <div class="col-md-4 mb-4">
                 <div class="service-button">
-                    <span class="service-label">Commercial Painting</span>
+                    <span class="service-label">{"name"=&gt;"Commercial Painting"}</span>
                 </div>
             </div>
             
             <div class="col-md-4 mb-4">
                 <div class="service-button">
-                    <span class="service-label">Restoration</span>
+                    <span class="service-label">{"name"=&gt;"Restoration"}</span>
                 </div>
             </div>
             
             <div class="col-md-4 mb-4">
                 <div class="service-button">
-                    <span class="service-label">Driveway Painting</span>
+                    <span class="service-label">{"name"=&gt;"Driveway Painting"}</span>
                 </div>
             </div>
             
             <div class="col-md-4 mb-4">
                 <div class="service-button">
-                    <span class="service-label">Pressure Cleaning</span>
+                    <span class="service-label">{"name"=&gt;"Pressure Cleaning"}</span>
                 </div>
             </div>
             
             <div class="col-md-4 mb-4">
                 <div class="service-button">
-                    <span class="service-label">Color Matching</span>
+                    <span class="service-label">{"name"=&gt;"Color Matching"}</span>
                 </div>
             </div>
             
             <div class="col-md-4 mb-4">
                 <div class="service-button">
-                    <span class="service-label">Free Estimates</span>
+                    <span class="service-label">{"name"=&gt;"Free Estimates"}</span>
                 </div>
             </div>
             
             <div class="col-md-4 mb-4">
                 <div class="service-button">
-                    <span class="service-label">Virtual Consulting</span>
+                    <span class="service-label">{"name"=&gt;"Virtual Consulting"}</span>
                 </div>
             </div>
             
@@ -189,6 +168,36 @@
     </div>
 </section>
 
+<!-- <section id="testimonials" class="my-5">
+    <div class="container">
+        <h2 class="text-center">What Our Clients Say</h2>
+        <div id="testimonial-carousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="testimonial">
+                        <p>"Pleasant Painting LLC did an amazing job on our home. Highly recommend!"</p>
+                        <h5>John Doe</h5>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="testimonial">
+                        <p>"Professional, courteous, and high-quality work. Couldn't be happier!"</p>
+                        <h5>Jane Smith</h5>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#testimonial-carousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#testimonial-carousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+</section>
+ -->
 <section id="incentives" class="my-5">
     <div class="container">
         <h2 class="text-center">Smart Home Incentives and Government Programs</h2>
@@ -205,21 +214,50 @@
             <div class="col-md-4">
                 <div class="card mb-4">
                     <div class="card-body">
-                        <h5 class="card-title">Affordable Connectivity Program (ACP)</h5>
-                        <p class="card-text">Get free or discounted internet access through the Affordable Connectivity Program, helping you stay connected without the high cost.</p>
-                        <a href="https://www.fcc.gov/acp" class="btn btn-primary">Learn More</a>
-                    </div>
-                </div>
-            </div>
-            <!-- <div class="col-md-4">
-                <div class="card mb-4">
-                    <div class="card-body">
                         <h5 class="card-title">Affordable Living</h5>
                         <p class="card-text">Explore various government incentives and programs designed to make living more affordable for everyone.</p>
                         <a href="https://www.hud.gov/topics/rental_assistance" class="btn btn-primary">Learn More</a>
                     </div>
                 </div>
-            </div> -->
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="affiliate-marketing" class="my-5">
+    <div class="container">
+        <h2 class="text-center">Recommended Products</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img class="card-img-top" src="https://example.com/product1.jpg" alt="Product 1" />
+                    <div class="card-body">
+                        <h5 class="card-title">Home Depot Paint Brushes</h5>
+                        <p class="card-text">High-quality paint brushes from Home Depot to enhance your painting experience.</p>
+                        <a href="https://www.homedepot.com/affiliate-link" class="btn btn-primary">Buy Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img class="card-img-top" src="https://example.com/product2.jpg" alt="Product 2" />
+                    <div class="card-body">
+                        <h5 class="card-title">Sherwin-Williams Paint</h5>
+                        <p class="card-text">Premium quality paint from Sherwin-Williams for the best results.</p>
+                        <a href="https://www.sherwin-williams.com/affiliate-link" class="btn btn-primary">Buy Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img class="card-img-top" src="https://example.com/product3.jpg" alt="Product 3" />
+                    <div class="card-body">
+                        <h5 class="card-title">Home Depot Paint Rollers</h5>
+                        <p class="card-text">Durable paint rollers from Home Depot to help you achieve professional results.</p>
+                        <a href="https://www.homedepot.com/affiliate-link" class="btn btn-primary">Buy Now</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
@@ -273,7 +311,40 @@
     </div>
 </section>
 
+<!-- Add this to index.md -->
+<section id="testimonials" class="my-5">
+    <div class="container">
+        <h2 class="text-center">What Our Clients Say</h2>
+        <div id="testimonial-carousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="testimonial">
+                        <p>"Pleasant Painting LLC did an amazing job on our home. Highly recommend!"</p>
+                        <h5>John Doe</h5>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="testimonial">
+                        <p>"Professional, courteous, and high-quality work. Couldn't be happier!"</p>
+                        <h5>Jane Smith</h5>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#testimonial-carousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#testimonial-carousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
     </div>
+</section>
+
+
+    </div>
+    <button id="theme-toggle" class="btn btn-secondary">Toggle Theme</button>
     <footer class="bg-dark text-white text-center py-4">
     <div class="container">
         <p>&copy; 2024 Pleasant Painting LLC</p>
@@ -282,11 +353,47 @@
         <p>Email: <a href="mailto:darionsexton63@gmail.com" class="text-white">darionsexton63@gmail.com</a></p>
         <p>Business Hours: Mon-Fri: 8am - 6pm, Sat-Sun: By appointment</p>
         <div id="social-media" class="d-flex justify-content-center">
-            <a href="https://www.facebook.com" class="mx-2"><img src="/assets/images/social-media-icons/facebook.png" alt="Facebook"></a>
-            <a href="https://www.twitter.com" class="mx-2"><img src="/assets/images/social-media-icons/twitter.png" alt="Twitter"></a>
-            <a href="https://www.instagram.com" class="mx-2"><img src="/assets/images/social-media-icons/instagram.png" alt="Instagram"></a>
-            <a href="https://www.linkedin.com" class="mx-2"><img src="/assets/images/social-media-icons/linkedin.png" alt="LinkedIn"></a>
-            <a href="https://www.youtube.com" class="mx-2"><img src="/assets/images/social-media-icons/youtube.png" alt="YouTube"></a>
+            
+            <a href="https://www.facebook.com" class="mx-2" target="_blank">
+                <img src="/assets/images/social-media-icons/facebook.png" alt="Facebook" width="40" height="40" class="social-icon">
+            </a>
+            
+            <a href="https://www.twitter.com" class="mx-2" target="_blank">
+                <img src="/assets/images/social-media-icons/twitter.png" alt="Twitter" width="40" height="40" class="social-icon">
+            </a>
+            
+            <a href="https://www.instagram.com" class="mx-2" target="_blank">
+                <img src="/assets/images/social-media-icons/instagram.png" alt="Instagram" width="40" height="40" class="social-icon">
+            </a>
+            
+            <a href="https://www.linkedin.com" class="mx-2" target="_blank">
+                <img src="/assets/images/social-media-icons/linkedin.png" alt="LinkedIn" width="40" height="40" class="social-icon">
+            </a>
+            
+            <a href="https://www.youtube.com" class="mx-2" target="_blank">
+                <img src="/assets/images/social-media-icons/youtube.png" alt="YouTube" width="40" height="40" class="social-icon">
+            </a>
+            
+            <a href="https://www.pinterest.com" class="mx-2" target="_blank">
+                <img src="/assets/images/social-media-icons/pinterest.png" alt="Pinterest" width="40" height="40" class="social-icon">
+            </a>
+            
+            <a href="https://www.snapchat.com" class="mx-2" target="_blank">
+                <img src="/assets/images/social-media-icons/snapchat.png" alt="Snapchat" width="40" height="40" class="social-icon">
+            </a>
+            
+            <a href="https://www.reddit.com" class="mx-2" target="_blank">
+                <img src="/assets/images/social-media-icons/reddit.png" alt="Reddit" width="40" height="40" class="social-icon">
+            </a>
+            
+            <a href="https://www.tumblr.com" class="mx-2" target="_blank">
+                <img src="/assets/images/social-media-icons/tumblr.png" alt="Tumblr" width="40" height="40" class="social-icon">
+            </a>
+            
+            <a href="https://www.whatsapp.com" class="mx-2" target="_blank">
+                <img src="/assets/images/social-media-icons/whatsapp.png" alt="WhatsApp" width="40" height="40" class="social-icon">
+            </a>
+            
         </div>
     </div>
 </footer>
@@ -297,5 +404,10 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <!-- Custom JS -->
     <script src="/assets/js/script.js"></script>
+    <!-- Add this to _layouts/default.html before the closing </body> tag -->
+<a href="#quote-form" class="fab">Contact Us</a>
+<!-- Add this to _layouts/default.html before the closing </body> tag -->
+<a href="#" id="scroll-to-top" class="scroll-to-top">↑</a>
+
 </body>
 </html>

@@ -22,16 +22,7 @@ title: About
                 <h4>Darion Sexton</h4>
                 <p>Founder & Lead Painter</p>
             </div>
-            <!-- <div class="col-md-4 text-center">
-                <img src="/assets/images/team/member2.jpg" class="rounded-circle mb-3" alt="Team Member 2" width="150">
-                <h4>Jane Smith</h4>
-                <p>Project Manager</p>
-            </div>
-            <div class="col-md-4 text-center">
-                <img src="/assets/images/team/member3.jpg" class="rounded-circle mb-3" alt="Team Member 3" width="150">
-                <h4>Jim Brown</h4>
-                <p>Senior Painter</p>
-            </div> -->
+            <!-- Add more team members as needed -->
         </div>
     </div>
 </section>

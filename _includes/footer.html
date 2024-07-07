@@ -3,14 +3,14 @@
         <p>&copy; 2024 Pleasant Painting LLC</p>
         <p>Location: 3972 Saranac Ave, West Palm Beach, FL 33409</p>
         <p>Phone: <a href="tel:+15615744550" class="text-white">+1 561-574-4550</a></p>
-        <p>Email: <a href="mailto:darionsexton63@gmail.com" class="text-white">darionsexton63@gmail.com</a></p>
+        <p>Email: <a href="mailto:{{ site.email }}" class="text-white">{{ site.email }}</a></p>
         <p>Business Hours: Mon-Fri: 8am - 6pm, Sat-Sun: By appointment</p>
         <div id="social-media" class="d-flex justify-content-center">
-            <a href="https://www.facebook.com" class="mx-2"><img src="/assets/images/social-media-icons/facebook.png" alt="Facebook"></a>
-            <a href="https://www.twitter.com" class="mx-2"><img src="/assets/images/social-media-icons/twitter.png" alt="Twitter"></a>
-            <a href="https://www.instagram.com" class="mx-2"><img src="/assets/images/social-media-icons/instagram.png" alt="Instagram"></a>
-            <a href="https://www.linkedin.com" class="mx-2"><img src="/assets/images/social-media-icons/linkedin.png" alt="LinkedIn"></a>
-            <a href="https://www.youtube.com" class="mx-2"><img src="/assets/images/social-media-icons/youtube.png" alt="YouTube"></a>
+            {% for social in site.social_media %}
+            <a href="{{ social.url }}" class="mx-2" target="_blank">
+                <img src="/assets/images/social-media-icons/{{ social.icon }}" alt="{{ social.name }}" width="40" height="40" class="social-icon">
+            </a>
+            {% endfor %}
         </div>
     </div>
 </footer>

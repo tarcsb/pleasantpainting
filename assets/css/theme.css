@@ -1,0 +1,24 @@
+/* Define light theme variables */
+:root {
+    --primary-color: #66b3ba; /* Pastel teal */
+    --secondary-color: #ff9a8d; /* Pastel coral */
+    --accent-color: #f7d9a6; /* Pastel orange */
+    --background-color: #e3f2fd; /* Pastel blue */
+    --text-color: #333;
+    --light-text-color: #fff;
+    --border-radius: 10px;
+    --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    --transition-duration: 0.3s;
+    --padding-section: 60px 20px;
+    --margin-section: 30px 0;
+}
+
+/* Define dark theme variables */
+body.dark-theme {
+    --primary-color: #0b3d4a; /* Darker ocean blue */
+    --secondary-color: #3caea3; /* Darker turquoise */
+    --accent-color: #ff4b4b; /* Darker coral */
+    --background-color: #17252a; /* Dark background */
+    --text-color: #fff;
+    --light-text-color: #333;
+}

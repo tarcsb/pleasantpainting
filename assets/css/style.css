@@ -1,12 +1,5 @@
-/* Define a color palette */
-:root {
-    --primary-color: #1a535c; /* Ocean blue */
-    --secondary-color: #4ecdc4; /* Turquoise */
-    --accent-color: #ff6b6b; /* Coral */
-    --background-color: #f7fff7; /* Light sand */
-    --text-color: #333;
-    --light-text-color: #fff;
-}
+/* Import theme variables */
+@import url('theme.css');
 
 /* Global styles */
 body {
@@ -16,83 +9,42 @@ body {
     margin: 0;
     padding: 0;
     line-height: 1.6;
+    transition: background-color var(--transition-duration), color var(--transition-duration);
 }
 
 /* Navbar styles */
 .navbar {
     background-color: var(--primary-color);
-    padding: 0.5rem 1rem;
+    padding: 1rem 1.5rem;
+    transition: background-color var(--transition-duration);
 }
 
 .navbar-brand, .nav-link {
     color: var(--light-text-color) !important;
+    transition: color var(--transition-duration);
 }
 
 .navbar-brand:hover, .nav-link:hover {
     color: var(--accent-color) !important;
 }
 
-/* Splash screen */
-#splash-screen {
-    text-align: center;
-    padding: 50px 20px;
-    color: var(--light-text-color);
-    background-size: cover;
-    background-position: center;
-    position: relative;
-}
-
-#splash-screen .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-}
-
-#splash-screen .content {
-    position: relative;
-    z-index: 1;
-}
-
-#splash-screen h1 {
-    margin: 0;
-    font-size: 2.5em;
-    animation: fadeIn 1.5s ease-in-out;
-}
-
-#splash-screen p {
-    font-size: 1.2em;
-    animation: fadeIn 2s ease-in-out;
-}
-
-#splash-screen .btn {
-    margin-top: 20px;
-    animation: fadeIn 2.5s ease-in-out;
-    background-color: var(--primary-color);
-    border: none;
-    padding: 10px 20px;
-    font-size: 1.2em;
-    border-radius: 25px;
-}
-
-#splash-screen .btn:hover {
-    background-color: var(--secondary-color);
+.navbar-toggler {
+    border-color: var(--light-text-color);
 }
 
 /* Section styles */
 section {
-    padding: 40px 20px;
-    margin: 20px 0;
-    border-radius: 10px;
+    padding: var(--padding-section);
+    margin: var(--margin-section);
+    border-radius: var(--border-radius);
     background: var(--light-text-color);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--box-shadow);
+    transition: background var(--transition-duration), box-shadow var(--transition-duration);
 }
 
 h2 {
     text-align: center;
-    font-size: 2em;
+    font-size: 2.5em;
     margin-bottom: 20px;
     animation: fadeIn 1.5s ease-in-out;
     color: var(--primary-color);
@@ -101,14 +53,14 @@ h2 {
 .service-button {
     position: relative;
     width: 100%;
-    height: 100px;
+    height: 120px;
     background-color: rgba(76, 205, 196, 0.3);
-    border-radius: 10px;
+    border-radius: var(--border-radius);
     border: 2px solid transparent;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: background-color 0.3s ease, border-color 0.3s ease;
+    transition: background-color var(--transition-duration), border-color var(--transition-duration);
 }
 
 .service-button:hover {
@@ -118,7 +70,7 @@ h2 {
 
 .service-label {
     color: black;
-    font-size: 1.5em;
+    font-size: 1.8em;
     text-align: center;
     width: 100%;
 }
@@ -129,8 +81,8 @@ h2 {
     max-width: 100%;
     margin: 0 auto;
     overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
 }
 
 #image-carousel img {
@@ -139,33 +91,32 @@ h2 {
     display: block;
 }
 
-/* Animations */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+/* Social media styles */
+.social-icon {
+    transition: transform var(--transition-duration), box-shadow var(--transition-duration);
 }
 
-@keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+.social-icon:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* Form styles */
 form {
     max-width: 600px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 30px;
     border: 1px solid #ddd;
-    border-radius: 10px;
+    border-radius: var(--border-radius);
     background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--box-shadow);
     animation: fadeIn 1.5s ease-in-out;
 }
 
 form input, form textarea, form button {
     width: 100%;
-    padding: 10px;
-    margin: 10px 0;
+    padding: 15px;
+    margin: 15px 0;
     border: 1px solid #ddd;
     border-radius: 5px;
 }
@@ -176,6 +127,7 @@ form button {
     border: none;
     cursor: pointer;
     border-radius: 25px;
+    transition: background-color var(--transition-duration);
 }
 
 form button:hover {
@@ -186,14 +138,14 @@ form button:hover {
 footer {
     background-color: var(--primary-color);
     color: var(--light-text-color);
-    padding: 20px 0;
+    padding: 30px 0;
     text-align: center;
     animation: fadeIn 1.5s ease-in-out;
 }
 
 #social-media {
     display: flex;
-    gap: 10px;
+    gap: 15px;
     justify-content: center;
 }
 
@@ -201,9 +153,10 @@ footer {
     display: inline-block;
 }
 
-#social-media img {
-    width: 30px;
-    height: 30px;
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 /* Responsive styles */
@@ -217,26 +170,18 @@ footer {
         margin: 10px 0;
     }
 
-    #splash-screen h1 {
-        font-size: 2em;
-    }
-
-    #splash-screen p {
-        font-size: 1em;
-    }
-
     h2 {
-        font-size: 1.5em;
+        font-size: 2em;
     }
 
     form {
         width: 100%;
-        padding: 10px;
+        padding: 15px;
     }
 
     form input, form textarea, form button {
-        padding: 5px;
-        margin: 5px 0;
+        padding: 10px;
+        margin: 10px 0;
     }
 
     form button {
@@ -248,6 +193,222 @@ footer {
     }
 
     .service-label {
-        font-size: 1.2em;
+        font-size: 1.4em;
     }
+}
+
+/* Add this to assets/css/style.css */
+.fab {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--primary-color);
+    color: var(--light-text-color);
+    padding: 15px 20px;
+    border-radius: 50%;
+    box-shadow: var(--box-shadow);
+    font-size: 1.5rem;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color var(--transition-duration), transform var(--transition-duration);
+}
+
+.fab:hover {
+    background-color: var(--secondary-color);
+    transform: scale(1.1);
+}
+
+
+/* Add this to assets/css/style.css */
+.navbar-nav {
+    text-align: center;
+}
+
+.navbar-nav .nav-item {
+    margin: 0 10px;
+}
+
+.navbar-nav .nav-link {
+    padding: 10px 15px;
+}
+
+@media (max-width: 768px) {
+    .navbar-nav .nav-item {
+        margin: 10px 0;
+    }
+
+    .navbar-nav .nav-link {
+        padding: 10px;
+    }
+}
+
+/* Add this to assets/css/style.css */
+body {
+    background: linear-gradient(to right, #66b3ba, #ff9a8d);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: var(--text-color);
+}
+
+section {
+    background: rgba(255, 255, 255, 0.9);
+    padding: var(--padding-section);
+    margin: var(--margin-section);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    transition: background var(--transition-duration), box-shadow var(--transition-duration);
+}
+
+/* Add this to assets/css/style.css */
+.service-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 150px;
+    background-color: rgba(76, 205, 196, 0.2);
+    border-radius: var(--border-radius);
+    border: 2px solid transparent;
+    transition: background-color var(--transition-duration), box-shadow var(--transition-duration), transform var(--transition-duration);
+    position: relative;
+    overflow: hidden;
+}
+
+.service-button:hover {
+    background-color: rgba(76, 205, 196, 0.4);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+}
+
+.service-button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(102, 179, 186, 0.5), rgba(255, 154, 141, 0.5));
+    opacity: 0;
+    transition: opacity var(--transition-duration);
+    z-index: 1;
+}
+
+.service-button:hover::before {
+    opacity: 1;
+}
+
+.service-label {
+    position: relative;
+    z-index: 2;
+    color: var(--text-color);
+    font-size: 1.5em;
+    text-align: center;
+    transition: color var(--transition-duration);
+}
+
+/* Add this to assets/css/style.css */
+.navbar {
+    background-color: var(--primary-color);
+    padding: 1rem 1.5rem;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: background-color var(--transition-duration);
+}
+
+.navbar-brand, .nav-link {
+    color: var(--light-text-color) !important;
+    transition: color var(--transition-duration);
+}
+
+.navbar-brand:hover, .nav-link:hover {
+    color: var(--accent-color) !important;
+}
+
+.navbar-toggler {
+    border-color: var(--light-text-color);
+}
+
+.nav-link {
+    margin-right: 20px;
+}
+
+@media (max-width: 768px) {
+    .nav-link {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+}
+/* Add this to assets/css/style.css */
+.visualizer {
+    text-align: center;
+}
+
+.visualizer img {
+    max-width: 100%;
+    margin-bottom: 20px;
+}
+
+.visualizer input {
+    width: 50px;
+    height: 50px;
+    border: none;
+    cursor: pointer;
+}
+/* Add this to assets/css/style.css */
+.scroll-to-top {
+    position: fixed;
+    bottom: 70px;
+    right: 20px;
+    background-color: var(--primary-color);
+    color: var(--light-text-color);
+    padding: 10px 15px;
+    border-radius: 50%;
+    box-shadow: var(--box-shadow);
+    font-size: 1.5rem;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color var(--transition-duration), transform var(--transition-duration);
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1000;
+}
+
+.scroll-to-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+}
+
+.scroll-to-top:hover {
+    background-color: var(--secondary-color);
+}
+
+/* Add this to assets/css/style.css */
+.scroll-to-top {
+    position: fixed;
+    bottom: 70px;
+    right: 20px;
+    background-color: var(--primary-color);
+    color: var(--light-text-color);
+    padding: 10px 15px;
+    border-radius: 50%;
+    box-shadow: var(--box-shadow);
+    font-size: 1.5rem;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color var(--transition-duration), transform var(--transition-duration);
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1000;
+}
+
+.scroll-to-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+}
+
+.scroll-to-top:hover {
+    background-color: var(--secondary-color);
 }

@@ -3,15 +3,6 @@ layout: default
 title: Home
 ---
 
-<div id="splash-screen" class="text-center p-5" style="position: relative; background: url('/assets/images/splash-bg.jpg') center/cover no-repeat;">
-    <div class="overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5);"></div>
-    <div class="content" style="position: relative; z-index: 1; color: white;">
-        <h1>{{ site.title }}</h1>
-        <p>{{ site.description }}</p>
-        <a class="btn btn-primary" href="#quote-form" style="background-color: var(--primary-color); border: none; padding: 10px 20px; font-size: 1.2em; border-radius: 25px;">Let's Paint</a>
-    </div>
-</div>
-
 <section id="gallery" class="my-5">
     <div class="container">
         <h2 class="text-center">Our Work</h2>
@@ -42,7 +33,7 @@ title: Home
             {% for service in site.data.services.services %}
             <div class="col-md-4 mb-4">
                 <div class="service-button">
-                    <span class="service-label">{{ service.name }}</span>
+                    <span class="service-label">{{ service }}</span>
                 </div>
             </div>
             {% endfor %}
@@ -50,6 +41,7 @@ title: Home
     </div>
 </section>
 
+<!-- {% include testimonials.html %} -->
 {% include incentives.html %}
 {% include affiliate-marketing.html %}
 {% include cta.html %}
@@ -94,3 +86,7 @@ title: Home
         </form>
     </div>
 </section>
+
+<!-- Add this to index.md -->
+{% include testimonials.html %}
+
